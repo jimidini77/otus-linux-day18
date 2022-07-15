@@ -18,8 +18,13 @@ Docker
 
 Установка и включение `docker`:
 ```
-yum install -y docker
-systemctl enable docker && systemctl start docker
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+systemctl enable containerd.service
+systemctl enable docker.service
+systemctl start containerd.service
+systemctl start docker.service
 ```
 
 Содержимое `Dockerfile`. Образ собирается на основе последнего образа `alpine`, 
