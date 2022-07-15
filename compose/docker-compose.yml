@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+    nginx:
+        image: nginx-custom:alpine
+        build: ./nginx/
+        container_name: nginx-container
+        ports:
+            - 81:80
+        links:
+            - php
+        volumes:
+            - ./www/html/:/var/www/html/
+    php:
+        image: php:fpm-alpine
+        container_name: php-container
+        ports:
+            - 9000:9000
+        volumes:
+            - ./www/html/:/var/www/html/
