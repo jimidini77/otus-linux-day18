@@ -14,6 +14,7 @@ cd /home/vagrant/mynginx/
 docker build -t docker-nginx:v1 .
 docker run -d -p 80:8080 docker-nginx:v1
 curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64" -o /usr/local/sbin/docker-compose
+chmod +x /usr/local/sbin/docker-compose
 cp -R /vagrant/compose /home/vagrant/
 cd /home/vagrant/compose/
 docker-compose up -d
