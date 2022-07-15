@@ -115,7 +115,7 @@ chmod +x /usr/local/sbin/docker-compose
 4 directories, 4 files
 ```
 
-Содержимое `docker-pompose.yml`:
+Содержимое `docker-compose.yml`:
 ```
 version: '3.9'
 services:
